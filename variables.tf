@@ -1,3 +1,4 @@
+# Variables de connection à Azure
 variable "appId" {
   description = "Azure Kubernetes Service Cluster service principal"
 }
@@ -6,6 +7,7 @@ variable "password" {
   description = "Azure Kubernetes Service Cluster password"
 }
 
+# Variables pour la création du resource group
 variable "rgName" {
   description = "Nom du resource Group"
 }
@@ -18,6 +20,24 @@ variable "rgTag_environnement" {
   description = "Tag environnement"
 }
 
+# Variables pour la création du réseau
+variable "networkName" {
+  description = "Nom du vnet"
+}
+variable "logicalNetworkAddresses" {
+  description = "Réseau logique du vnet"
+}
+
+variable "subnetName" {
+  description = "Nom du subnet"
+}
+
+variable "logicalSubnetAddresses" {
+  description = "Réseau logique du subnet"
+}
+
+
+# Variables pour la création du cluster AKS
 variable "ClusterName" {
   description = "Nom du Cluster"
 }
@@ -48,4 +68,7 @@ variable "NodeSizeDisk" {
 }
 
 
+variable "ssh_public_key" {
+  description = "Cle publique accédant aux nodes"
+}
 

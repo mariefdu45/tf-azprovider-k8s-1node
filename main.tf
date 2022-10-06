@@ -46,10 +46,10 @@ resource "azurerm_kubernetes_cluster" "cluster" {
     vnet_subnet_id  = azurerm_virtual_network.vnet.subnet.*.id[0]
   }
 
-  service_principal {
-    client_id     = var.appId
-    client_secret = var.password
+  identity {
+    type = "SystemAssigned"
   }
+
 
   azure_active_directory_role_based_access_control {
     managed                 = true
@@ -62,11 +62,4 @@ resource "azurerm_kubernetes_cluster" "cluster" {
       key_data = file(var.ssh_public_key)
     }
   }
-
-  
 }
-/*output "kube_config_admin" {
-  value = "${azurerm_kubernetes_cluster.cluster.kube_admin_config_raw}"
-  sensitive = true
-}*/
-

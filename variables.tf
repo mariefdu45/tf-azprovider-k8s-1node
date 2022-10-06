@@ -1,11 +1,3 @@
-# Variables de connection à Azure
-variable "appId" {
-  description = "Azure Kubernetes Service Cluster service principal"
-}
-
-variable "password" {
-  description = "Azure Kubernetes Service Cluster password"
-}
 
 # Variables pour la création du resource group
 variable "rgName" {

@@ -1,66 +1,71 @@
 
-# Variables pour la création du resource group
+# !/bin/bash
+# CSI Installation – Variables Declaration
+# Version : May 27, 2024
+# Author : mariefdu45@gmail.com
+#
+# Variables for Resource group creation
 variable "rgName" {
-  description = "Nom du resource Group"
+  description = "Resource Group Name"
 }
 
 variable "location" {
-  description = "Emplacement des ressources"
+  description = "Resource Group Location"
 }
 
 variable "rgTag_environnement" {
   description = "Tag environnement"
 }
 
-# Variables pour la création du réseau
+# Variables for Network creation
 variable "networkName" {
-  description = "Nom du vnet"
+  description = "Vnet name"
 }
 variable "logicalNetworkAddresses" {
-  description = "Réseau logique du vnet"
+  description = "Vnet adresses"
 }
 
 variable "subnetName" {
-  description = "Nom du subnet"
+  description = "Subnet Name"
 }
 
 variable "logicalSubnetAddresses" {
-  description = "Réseau logique du subnet"
+  description = "Subnet addresses"
 }
 
 
-# Variables pour la création du cluster AKS
+# Variables for AKS cluster creation
 variable "ClusterName" {
-  description = "Nom du Cluster"
+  description = "Cluster name"
 }
 
 variable "ClusterVersion" {
-  description = "Version du Cluster"
+  description = "Cluster Version"
 }
 
 variable "clusterrolebindingGroup" {
   type = list
-  description = "Groupe AD ayant droit de clusterrolebinding"
+  description = "All members of clusterrolebindingGroup will have all capabilities for this cluster"
 }
 
 variable "PoolName" {
-  description = "Nom du pool de nodes"
+  description = "nodes pool name"
 }
 
 variable "NodeCount" {
-  description = "Nombre de nodes"
+  description = "nodes count"
 }
 
 variable "NodeSizeCompute" {
-  description = "Taille des nodes"
+  description = "nodes size"
 }
 
 variable "NodeSizeDisk" {
-  description = "Taille du disque des nodes"
+  description = "disk nodes size"
 }
 
 
 variable "ssh_public_key" {
-  description = "Cle publique accédant aux nodes"
+  description = "This certificate for accessing nodes"
 }
 
